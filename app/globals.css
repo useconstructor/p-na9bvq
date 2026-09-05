@@ -5,9 +5,14 @@
   --color-secondary: #FFFFFF;
   --color-accent: #C97C7C;
   --color-background: #1F2A20;
+  --font-family-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 @layer base {
   * { box-sizing: border-box; }
   body { margin: 0; }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
