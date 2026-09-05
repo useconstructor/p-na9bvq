@@ -3,10 +3,9 @@
 import Image from 'next/image';
 
 const stats = [
-  { value: '15+', label: 'Years of Excellence' },
-  { value: '1,200+', label: 'Five-Star Reviews' },
-  { value: '50K+', label: 'Arrangements Delivered' },
-  { value: '24hr', label: 'Same-Day Delivery' },
+  { icon: '✿', label: 'Handcrafted' },
+  { icon: '❀', label: 'Local & Seasonal' },
+  { icon: '✦', label: 'Nationwide Delivery' },
 ];
 
 const featuredProducts = [
@@ -49,11 +48,11 @@ const navLinks = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#FAF7F2]">
+    <div className="min-h-screen bg-[#FDF8F3]">
       {/* Sticky Navigation */}
-      <header className="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-sm border-b border-[#1F2A20]/10">
+      <header className="sticky top-0 z-50 bg-[#FDF8F3]/95 backdrop-blur-sm border-b border-[#D4A574]/20">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" className="text-2xl font-serif tracking-wider text-[#1F2A20]">
+          <a href="/" className="text-2xl font-serif tracking-wider text-[#8B6F5C]">
             BLOOMBOX
           </a>
           <nav className="hidden md:flex items-center gap-8">
@@ -61,21 +60,66 @@ export default function Home() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm uppercase tracking-widest text-[#1F2A20]/70 hover:text-[#1F2A20] transition-colors"
+                className="text-sm uppercase tracking-widest text-[#8B6F5C]/70 hover:text-[#8B6F5C] transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </nav>
-          <button className="bg-[#1F2A20] text-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-[#1F2A20]/90 transition-colors">
-            Shop Now
-          </button>
+          <div className="flex items-center gap-4">
+            {/* Search Icon */}
+            <button className="p-2 text-[#8B6F5C] hover:text-[#C97C7C] transition-colors" aria-label="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+            </button>
+            {/* Account Icon */}
+            <button className="p-2 text-[#8B6F5C] hover:text-[#C97C7C] transition-colors" aria-label="Account">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+              </svg>
+            </button>
+            {/* Cart Icon */}
+            <button className="p-2 text-[#8B6F5C] hover:text-[#C97C7C] transition-colors" aria-label="Cart">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+              </svg>
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Hero Split Section */}
+      {/* Hero Split Section - Text Left, Image Right */}
       <section className="grid lg:grid-cols-2 min-h-[85vh]">
-        <div className="relative h-[50vh] lg:h-auto">
+        <div className="flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-0 order-2 lg:order-1">
+          <p className="text-sm uppercase tracking-[0.3em] text-[#C97C7C] mb-4">
+            Artisan Floristry
+          </p>
+          <h1 className="text-5xl lg:text-7xl font-serif text-[#8B6F5C] mb-6 leading-tight">
+            Flowers,
+            <br />
+            <span className="italic">Intentionally</span>
+          </h1>
+          <p className="text-lg text-[#8B6F5C]/70 mb-8 max-w-md leading-relaxed">
+            Curated arrangements crafted with purpose. Each bouquet tells a story
+            through thoughtfully selected seasonal blooms.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#collections"
+              className="bg-[#C97C7C] text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-[#B86B6B] transition-colors"
+            >
+              Explore Collections
+            </a>
+            <a
+              href="#about"
+              className="border border-[#D4A574] text-[#8B6F5C] px-8 py-4 text-sm uppercase tracking-wider hover:bg-[#D4A574] hover:text-white transition-colors"
+            >
+              Our Story
+            </a>
+          </div>
+        </div>
+        <div className="relative h-[50vh] lg:h-auto order-1 lg:order-2">
           <Image
             src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=1200&h=1400&fit=crop"
             alt="Elegant floral arrangement"
@@ -84,46 +128,16 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-0">
-          <p className="text-sm uppercase tracking-[0.3em] text-[#C97C7C] mb-4">
-            Artisan Floristry
-          </p>
-          <h1 className="text-5xl lg:text-7xl font-serif text-[#1F2A20] mb-6 leading-tight">
-            Flowers,
-            <br />
-            <span className="italic">Intentionally</span>
-          </h1>
-          <p className="text-lg text-[#1F2A20]/70 mb-8 max-w-md leading-relaxed">
-            Curated arrangements crafted with purpose. Each bouquet tells a story
-            through thoughtfully selected seasonal blooms.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#collections"
-              className="bg-[#1F2A20] text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-[#1F2A20]/90 transition-colors"
-            >
-              Explore Collections
-            </a>
-            <a
-              href="#about"
-              className="border border-[#1F2A20] text-[#1F2A20] px-8 py-4 text-sm uppercase tracking-wider hover:bg-[#1F2A20] hover:text-white transition-colors"
-            >
-              Our Story
-            </a>
-          </div>
-        </div>
       </section>
 
       {/* Stats Banner */}
-      <section className="bg-[#1F2A20] py-12">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="bg-[#F5EBE0] py-10 border-y border-[#D4A574]/20">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="grid grid-cols-3 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-4xl lg:text-5xl font-serif text-white mb-2">
-                  {stat.value}
-                </p>
-                <p className="text-xs uppercase tracking-widest text-white/60">
+                <p className="text-2xl mb-2">{stat.icon}</p>
+                <p className="text-sm uppercase tracking-widest text-[#8B6F5C]">
                   {stat.label}
                 </p>
               </div>
@@ -133,34 +147,35 @@ export default function Home() {
       </section>
 
       {/* Featured Products */}
-      <section id="collections" className="py-20 px-6">
+      <section id="collections" className="py-20 px-6 bg-[#FDF8F3]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-[0.3em] text-[#C97C7C] mb-4">
               Seasonal Selection
             </p>
-            <h2 className="text-4xl lg:text-5xl font-serif text-[#1F2A20]">
+            <h2 className="text-4xl lg:text-5xl font-serif text-[#8B6F5C]">
               Featured Arrangements
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredProducts.map((product) => (
               <article key={product.id} className="group cursor-pointer">
-                <div className="relative aspect-[3/4] mb-4 overflow-hidden bg-[#1F2A20]/5">
+                <div className="relative aspect-[3/4] mb-4 overflow-hidden bg-[#F5EBE0]">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="font-serif text-xl text-[#1F2A20] mb-1">
+                <h3 className="font-serif text-xl text-[#8B6F5C] mb-1">
                   {product.name}
                 </h3>
-                <p className="text-sm text-[#1F2A20]/60 mb-2">
+                <p className="text-sm text-[#8B6F5C]/60 mb-2">
                   {product.description}
                 </p>
-                <p className="text-lg text-[#1F2A20]">
+                <p className="text-lg text-[#C97C7C]">
                   ${product.price}
                 </p>
               </article>
@@ -169,7 +184,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <a
               href="#collections"
-              className="inline-block border border-[#1F2A20] text-[#1F2A20] px-10 py-4 text-sm uppercase tracking-wider hover:bg-[#1F2A20] hover:text-white transition-colors"
+              className="inline-block border border-[#D4A574] text-[#8B6F5C] px-10 py-4 text-sm uppercase tracking-wider hover:bg-[#D4A574] hover:text-white transition-colors"
             >
               View All Arrangements
             </a>
@@ -178,13 +193,13 @@ export default function Home() {
       </section>
 
       {/* Occasions Section */}
-      <section id="occasions" className="py-20 px-6 bg-[#1F2A20]/5">
+      <section id="occasions" className="py-20 px-6 bg-[#F5EBE0]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-[0.3em] text-[#C97C7C] mb-4">
               Every Moment Deserves Beauty
             </p>
-            <h2 className="text-4xl lg:text-5xl font-serif text-[#1F2A20]">
+            <h2 className="text-4xl lg:text-5xl font-serif text-[#8B6F5C]">
               Shop by Occasion
             </h2>
           </div>
@@ -203,9 +218,10 @@ export default function Home() {
                   src={occasion.image}
                   alt={occasion.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[#1F2A20]/30 group-hover:bg-[#1F2A20]/40 transition-colors" />
+                <div className="absolute inset-0 bg-[#8B6F5C]/30 group-hover:bg-[#8B6F5C]/40 transition-colors" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-2xl font-serif text-white">{occasion.name}</span>
                 </div>
@@ -216,21 +232,21 @@ export default function Home() {
       </section>
 
       {/* Subscription CTA */}
-      <section id="subscriptions" className="py-20 px-6">
+      <section id="subscriptions" className="py-20 px-6 bg-[#FDF8F3]">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm uppercase tracking-[0.3em] text-[#C97C7C] mb-4">
             Fresh Flowers Monthly
           </p>
-          <h2 className="text-4xl lg:text-5xl font-serif text-[#1F2A20] mb-6">
+          <h2 className="text-4xl lg:text-5xl font-serif text-[#8B6F5C] mb-6">
             The Bloom Subscription
           </h2>
-          <p className="text-lg text-[#1F2A20]/70 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-[#8B6F5C]/70 mb-8 max-w-2xl mx-auto leading-relaxed">
             Receive a curated arrangement of seasonal blooms delivered to your door every
             month. Flexible plans starting at $95/month with free delivery.
           </p>
           <a
             href="#subscribe"
-            className="inline-block bg-[#C97C7C] text-white px-10 py-4 text-sm uppercase tracking-wider hover:bg-[#C97C7C]/90 transition-colors"
+            className="inline-block bg-[#C97C7C] text-white px-10 py-4 text-sm uppercase tracking-wider hover:bg-[#B86B6B] transition-colors"
           >
             Start Your Subscription
           </a>
@@ -238,7 +254,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6 bg-[#1F2A20]">
+      <section id="about" className="py-20 px-6 bg-[#8B6F5C]">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[#C97C7C] mb-4">
@@ -258,7 +274,7 @@ export default function Home() {
             </p>
             <a
               href="#story"
-              className="inline-block border border-white text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-white hover:text-[#1F2A20] transition-colors"
+              className="inline-block border border-white text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-white hover:text-[#8B6F5C] transition-colors"
             >
               Learn More
             </a>
@@ -268,6 +284,7 @@ export default function Home() {
               src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&h=800&fit=crop"
               alt="Florist arranging flowers"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
@@ -275,44 +292,44 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#FAF7F2] border-t border-[#1F2A20]/10 py-16 px-6">
+      <footer className="bg-[#FDF8F3] border-t border-[#D4A574]/20 py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <h3 className="text-2xl font-serif text-[#1F2A20] mb-4">BLOOMBOX</h3>
-              <p className="text-sm text-[#1F2A20]/60 leading-relaxed">
+              <h3 className="text-2xl font-serif text-[#8B6F5C] mb-4">BLOOMBOX</h3>
+              <p className="text-sm text-[#8B6F5C]/60 leading-relaxed">
                 Artisan floristry for life&apos;s meaningful moments.
               </p>
             </div>
             <div>
-              <h4 className="text-xs uppercase tracking-widest text-[#1F2A20] mb-4">Shop</h4>
+              <h4 className="text-xs uppercase tracking-widest text-[#8B6F5C] mb-4">Shop</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-[#1F2A20]/60 hover:text-[#1F2A20]">All Arrangements</a></li>
-                <li><a href="#" className="text-sm text-[#1F2A20]/60 hover:text-[#1F2A20]">Subscriptions</a></li>
-                <li><a href="#" className="text-sm text-[#1F2A20]/60 hover:text-[#1F2A20]">Gift Cards</a></li>
-                <li><a href="#" className="text-sm text-[#1F2A20]/60 hover:text-[#1F2A20]">Corporate</a></li>
+                <li><a href="#" className="text-sm text-[#8B6F5C]/60 hover:text-[#C97C7C]">All Arrangements</a></li>
+                <li><a href="#" className="text-sm text-[#8B6F5C]/60 hover:text-[#C97C7C]">Subscriptions</a></li>
+                <li><a href="#" className="text-sm text-[#8B6F5C]/60 hover:text-[#C97C7C]">Gift Cards</a></li>
+                <li><a href="#" className="text-sm text-[#8B6F5C]/60 hover:text-[#C97C7C]">Corporate</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-xs uppercase tracking-widest text-[#1F2A20] mb-4">Help</h4>
+              <h4 className="text-xs uppercase tracking-widest text-[#8B6F5C] mb-4">Help</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-[#1F2A20]/60 hover:text-[#1F2A20]">Delivery Info</a></li>
-                <li><a href="#" className="text-sm text-[#1F2A20]/60 hover:text-[#1F2A20]">Care Guide</a></li>
-                <li><a href="#" className="text-sm text-[#1F2A20]/60 hover:text-[#1F2A20]">FAQs</a></li>
-                <li><a href="#" className="text-sm text-[#1F2A20]/60 hover:text-[#1F2A20]">Contact</a></li>
+                <li><a href="#" className="text-sm text-[#8B6F5C]/60 hover:text-[#C97C7C]">Delivery Info</a></li>
+                <li><a href="#" className="text-sm text-[#8B6F5C]/60 hover:text-[#C97C7C]">Care Guide</a></li>
+                <li><a href="#" className="text-sm text-[#8B6F5C]/60 hover:text-[#C97C7C]">FAQs</a></li>
+                <li><a href="#" className="text-sm text-[#8B6F5C]/60 hover:text-[#C97C7C]">Contact</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-xs uppercase tracking-widest text-[#1F2A20] mb-4">Connect</h4>
+              <h4 className="text-xs uppercase tracking-widest text-[#8B6F5C] mb-4">Connect</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-[#1F2A20]/60 hover:text-[#1F2A20]">Instagram</a></li>
-                <li><a href="#" className="text-sm text-[#1F2A20]/60 hover:text-[#1F2A20]">Pinterest</a></li>
-                <li><a href="#" className="text-sm text-[#1F2A20]/60 hover:text-[#1F2A20]">Newsletter</a></li>
+                <li><a href="#" className="text-sm text-[#8B6F5C]/60 hover:text-[#C97C7C]">Instagram</a></li>
+                <li><a href="#" className="text-sm text-[#8B6F5C]/60 hover:text-[#C97C7C]">Pinterest</a></li>
+                <li><a href="#" className="text-sm text-[#8B6F5C]/60 hover:text-[#C97C7C]">Newsletter</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-[#1F2A20]/10 pt-8 text-center">
-            <p className="text-sm text-[#1F2A20]/60">
+          <div className="border-t border-[#D4A574]/20 pt-8 text-center">
+            <p className="text-sm text-[#8B6F5C]/60">
               © 2026 BLOOMBOX. All rights reserved.
             </p>
           </div>
